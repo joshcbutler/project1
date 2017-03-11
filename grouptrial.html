@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Favorite Stocks</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Stock Search</h1>
+
+    <!-- We'll be dumping our JSON contents in here -->
+    <div id="stock-view"></div>
+
+    <!-- This form will be where users input data about the stocks -->
+    <form id="stock-form">
+      <label for="stock-input">Search for a stock</label>
+      <input type="text" id="stock-input"><br>
+
+      <!-- This button will trigger our AJAX call -->
+      <input id="find-stock" type="submit" value="Stock Search">
+    </form>
+
+      <h2 id="highPrice"></h2>
+      <h2 id="lowPrice"></h2>
+      <h2 id="lastPrice"></h2>
+      
+
+      <div id="business_address"></div>
+      <div id="company_url"></div>
+      <div id="long_description"></div>
+      
+
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript">
+      // This .on("click") function will trigger the AJAX Call
+            $("#find-stock").on("click", function(event) {
+
+          // Preventing the submit button from trying to submit the form
+          // We're optionally using a form so the user may hit Enter to search instead of clicking the button
+          event.preventDefault();
+
+          var Markit = {};
+          /**
+           * Define the QuoteService.
+           * First argument is symbol (string) for the quote. Examples: AAPL, MSFT, JNJ, GOOG.
+           * Second argument is fCallback, a callback function executed onSuccess of API.
+           */
+          Markit.QuoteService = function(sSymbol, fCallback) {
+              this.symbol = sSymbol;
+              this.fCallback = fCallback;
+              this.DATA_SRC = "http://dev.markitondemand.com/Api/v2/Quote/jsonp";
+              this.makeRequest();
+          };
+          /**
+           * Ajax success callback. fCallback is the 2nd argument in the QuoteService constructor.
+           */
+          Markit.QuoteService.prototype.handleSuccess = function(jsonResult) {
+              this.fCallback(jsonResult);
+          };
+          /**
+           * Ajax error callback
+           */
+          Markit.QuoteService.prototype.handleError = function(jsonResult) {
+              console.error(jsonResult);
+          };
+          /** 
+           * Starts a new ajax request to the Quote API
+           */
+
+          Markit.QuoteService.prototype.makeRequest = function() {
+              //Abort any open requests
+              if (this.xhr) {
+                  this.xhr.abort();
+              }
+              //Start a new request
+              this.xhr = $.ajax({
+                  data: {
+                      symbol: this.symbol
+                  },
+                  url: this.DATA_SRC,
+                  dataType: "jsonp",
+                  success: this.handleSuccess,
+                  error: this.handleError,
+                  context: this
+              });
+          };
+
+          var name = $("#stock-input").val().toUpperCase();
+
+          new Markit.QuoteService(name, function(jsonResult) {
+
+              //Catch errors
+              if (!jsonResult || jsonResult.Message) {
+                  console.error("Error: ", jsonResult.Message);
+                  return;
+              }
+
+              //If all goes well, your quote will be here.
+              console.log(jsonResult);
+
+              //Now proceed to do something with the data.
+              $("#name").text(jsonResult.Name);
+              $("#highPrice").text("High Price:" + "  " + jsonResult.High);
+              $("#lowPrice").text("Low Price:" + "  " + jsonResult.Low);
+              $("#lastPrice").text("Current Price:" + "  " + jsonResult.LastPrice);
+          });
+          
+          //=====================Second AJAX Request==================================//
+         
+          console.log(this);
+          console.log("'" + $("#stock-input").val() + "'");
+          
+          var url = "https://api.intrinio.com/companies?ticker=" + $("#stock-input").val().toUpperCase();
+          var username = "f3c71abbeedf153649a3f4c2c3f8a891";
+          var password = "bf28a1c0a59cc7ae5b2778cf20a4bc77";
+          var auth = "Basic " + btoa(username + ':' + password);
+
+
+          $.ajax({
+
+              url: url,
+              method: 'GET',
+              headers: {
+                  "Authorization": auth
+              }
+
+          }).done(function(response) {
+              console.log(response)
+
+              $("#business_address").text(response.business_address)
+              $("#company_url").text(response.company_url)
+              $("#long_description").text(response.long_description)
+
+          });
+      });
+    </script>
+  </div>
+</body>
+
+</html>
