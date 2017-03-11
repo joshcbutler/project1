@@ -13,7 +13,18 @@ html {
 	border-style: solid;
 	border-color: #949389;
 }
+/*#logo {
+    height: 100%;
+    width: 100%;
+}*/
 
+#timber {
+    background-color: #00AD81 ;
+}
+
+.resultSym {
+    font-size: 50px;
+}
 /*hex colors:
 
 ears: #939387

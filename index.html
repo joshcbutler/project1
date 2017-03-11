@@ -12,7 +12,7 @@
 
 <body>
     <section class="hero is-small is-primary is-bold hero-body">
-        <div class="hero-body">
+        <div>
             <div class="container">
                 <div class="columns">
                     <div class="column">
@@ -28,27 +28,28 @@
                     </div>
                     <!-- <div class="column">
                     </div> -->
-                    <div class="hero-body" class="column">
-                        <form action="https://bbxdesign.us3.list-manage.com/subscribe/post?u=b43b93fe633f0560b2a72a69c&amp;id=52585e8803" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                            <div id="mc_embed_signup_scroll">
-                                <div class="control is-grouped">
-                                    <div class="control has-icon is-expanded">
-                                        <input type="email" value="" name="EMAIL" class="input is-flat required email" id="mce-EMAIL" placeholder="Search for Companies" required>
-                                        <span class="icon is-small">
-                   <i class="fa fa-search"></i>
-                 </span>
+                    <div class="column">
+                        <div class="hero-body">
+                            <form id="stock-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="control is-grouped">
+                                        <div class="control has-icon is-expanded">
+                                            <input id="stock-input" class="input is-flat" placeholder="Search for Companies" required>
+                                            <span class="icon is-small">
+                                                 <i class="fa fa-search"></i>
+                                            </span>
+                                        </div>
+                                        <div class="control">
+                                            <input type="submit" value="Search" name="search" id="find-stock" id="mc-embedded-search" class="button is-white is-outlined" id="searchButton">
+                                        </div>
                                     </div>
-                                    <div class="control">
-                                        <input type="submit" value="Search" name="search" id="mc-embedded-search" class="button is-white is-outlined" id="searchButton">
+                                    <div id="mce-responses">
+                                        <div class="notification is-danger response" id="mce-error-response" style="display:none"></div>
+                                        <div class="notification is-success response" id="mce-success-response" style="display:none"></div>
                                     </div>
                                 </div>
-                                <div id="mce-responses">
-                                    <div class="notification is-danger response" id="mce-error-response" style="display:none"></div>
-                                    <div class="notification is-success response" id="mce-success-response" style="display:none"></div>
-                                </div>
-                            </div>
+                        </div>
                     </div>
-                </div>
     </section>
     <br>
     <!-- <center>
@@ -68,107 +69,113 @@
             <div class="tile">
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child notification is-primary" id="lightGray">
-                        <p class="title">Vertical...</p>
-                        <p class="subtitle">Top tile</p>
+                        <p class="title">Stocks</p>
+                        <p class="subtitle"></p>
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column">
+                                    <h1> APPL </h1>
+                                    <p> High: Low: Current: </p>
+                                </div>
+                                <div class="column">
+                                    <h1> APPL </h1>
+                                    <p> High: Low: Current: </p>
+                                </div>
+                                <div class="column">
+                                    <h1> APPL </h1>
+                                    <p> High: Low: Current: </p>
+                                </div>
+                                <div class="column">
+                                    <h1> APPL </h1>
+                                    <p> High: Low: Current: </p>
+                                </div>
+                                <div class="column">
+                                    <h1> APPL </h1>
+                                    <p> High: Low: Current: </p>
+                                </div>
+                            </div>
                     </article>
-                    <article class="tile is-child notification is-warning" id="searchResults">
-                        <p class="title">...tiles</p>
-                        <p class="subtitle">Bottom tile</p>
+                    <article class="tile is-child notification is-warning" id="stock-view" id="searchResults">
+                        <p class="title" id="legal_name"></p>
+                        <p id="highPrice"></p>
+                        <p id="lowPrice"></p>
+                        <p id="lastPrice"></p>
+                    </article>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <p class="title">Company Information</p>
+                        <p class="subtitle"></p>
+                        <br>
+                        <p id="business_address"></p>
+                        <br>
+                        <p id="company_url"></p>
+                        <br>
+                        <p id="long_description"></p>
+                        <div class="content">
+                            <!-- Content -->
+                        </div>
                     </article>
                 </div>
             </div>
             <div class="tile is-parent">
-                <article class="tile is-child notification is-danger">
-                    <p class="title">News</p>
-                    <p class="subtitle">Aligned with the right tile</p>
+                <article class="tile is-child notification is-primary" id="timber">
                     <div class="content">
-                        <!-- Content -->
+                        <p class="title">My Stocks</p>
+                        <p class="subtitle">keep track of your investments</p>
+                        <div class="content">
+                            <!-- Content -->
+                            <table class="table is-bordered is-striped is-narrow">
+                                <thead>
+                                    <tr>
+                                        <th><strong>Company</strong></th>
+                                        <th><strong>Symbol</strong></th>
+                                        <th><strong>High</strong></th>
+                                        <th><strong>Low</strong></th>
+                                        <th><strong>Current</strong></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                </tfoot>
+                                <tbody>
+                                    <tr>
+                                        <td> Apple, Inc </td>
+                                        <td> APPL </td>
+                                        <td> 1 </td>
+                                        <td> 2 </td>
+                                        <td> 3 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Apple, Inc </td>
+                                        <td> APPL </td>
+                                        <td> 1 </td>
+                                        <td> 2 </td>
+                                        <td> 3 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Apple, Inc </td>
+                                        <td> APPL </td>
+                                        <td> 1 </td>
+                                        <td> 2 </td>
+                                        <td> 3 </td>
+                                    </tr>
+                                    <tr>
+                                        <td> Apple, Inc </td>
+                                        <td> APPL </td>
+                                        <td> 1 </td>
+                                        <td> 2 </td>
+                                        <td> 3 </td>
+                                    </tr>
+                                </tbody>
+                                <!-- Content -->
+                        </div>
                     </div>
                 </article>
             </div>
         </div>
-        <div class="tile is-parent">
-            <article class="tile is-child notification is-success" id="lightGray">
-                <div class="content">
-                    <p class="title">My Stocks</p>
-                    <p class="subtitle">With even more content</p>
-                    <div class="content">
-                        <!-- Content -->
-                    </div>
-                </div>
-            </article>
-        </div>
-    </div>
-    <script type="text/javascript">
-    /**
-     * Version 1.0, Jan 2012
-     */
-
-    var Markit = {};
-    /**
-     * Define the QuoteService.
-     * First argument is symbol (string) for the quote. Examples: AAPL, MSFT, JNJ, GOOG.
-     * Second argument is fCallback, a callback function executed onSuccess of API.
-     */
-    Markit.QuoteService = function(sSymbol, fCallback) {
-        this.symbol = sSymbol;
-        this.fCallback = fCallback;
-        this.DATA_SRC = "http://dev.markitondemand.com/Api/v2/Quote/jsonp";
-        this.makeRequest();
-    };
-    /**
-     * Ajax success callback. fCallback is the 2nd argument in the QuoteService constructor.
-     */
-    Markit.QuoteService.prototype.handleSuccess = function(jsonResult) {
-        this.fCallback(jsonResult);
-    };
-    /**
-     * Ajax error callback
-     */
-    Markit.QuoteService.prototype.handleError = function(jsonResult) {
-        console.error(jsonResult);
-    };
-    /**
-     * Starts a new ajax request to the Quote API
-     */
-    Markit.QuoteService.prototype.makeRequest = function() {
-        //Abort any open requests
-        if (this.xhr) {
-            this.xhr.abort();
-        }
-        //Start a new request
-        this.xhr = $.ajax({
-            data: {
-                symbol: this.symbol
-            },
-            url: this.DATA_SRC,
-            dataType: "jsonp",
-            success: this.handleSuccess,
-            error: this.handleError,
-            context: this
-        });
-    };
-
-    new Markit.QuoteService("AAPL", function(jsonResult) {
-
-        //Catch errors
-        if (!jsonResult || jsonResult.Message) {
-            console.error("Error: ", jsonResult.Message);
-            return;
-        }
-
-        //If all goes well, your quote will be here.
-        console.log(jsonResult);
-
-        //Now proceed to do something with the data.
-        $("stockInfo").first().text(jsonResult.Name);
-
-        /**
-         * Need help? Visit the API documentation at:
-         * http://dev.markitondemand.com
-         */
-    });
-    </script>
+        <script src="assets/javascript/project1.js">
+        </script>
 </body>
 
 </html>
