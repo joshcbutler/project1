@@ -1,0 +1,23 @@
+html {
+}
+
+#searchButton {
+	transition-duration: 0.4s;
+}
+#lightGray {
+	background-color: #949389;
+}
+#searchResults {
+	background-color: #ECE7DA;
+	border: 2px;
+	border-style: solid;
+	border-color: #949389;
+}
+
+/*hex colors:
+
+ears: #939387
+outline: #251e0e
+fur: #5b5849
+white: #eee6db
+eyebrows: #767467*/
