@@ -9,8 +9,10 @@
         * First argument is symbol (string) for the quote. Examples: AAPL, MSFT, JNJ, GOOG.
         * Second argument is fCallback, a callback function executed onSuccess of API.
         */
+      var name = $("#stock-input").val().toUpperCase();
+
        Markit.QuoteService = function(sSymbol, fCallback) {
-           this.symbol = sSymbol;
+           name = sSymbol;
            this.fCallback = fCallback;
            this.DATA_SRC = "http://dev.markitondemand.com/Api/v2/Quote/jsonp";
            this.makeRequest();
@@ -38,7 +40,7 @@
            //Start a new request
            this.xhr = $.ajax({
                data: {
-                   symbol: this.symbol
+                   symbol: name
                },
                url: this.DATA_SRC,
                dataType: "jsonp",
@@ -47,7 +49,7 @@
                context: this
            });
        };
-       var name = $("#stock-input").val().toUpperCase();
+
        new Markit.QuoteService(name, function(jsonResult) {
            //Catch errors
            if (!jsonResult || jsonResult.Message) {
@@ -61,6 +63,10 @@
            $("#highPrice").text("High Price:" + "  " + jsonResult.High);
            $("#lowPrice").text("Low Price:" + "  " + jsonResult.Low);
            $("#lastPrice").text("Current Price:" + "  " + jsonResult.LastPrice);
+
+           $("#tableList > tbody").append("<tr><td>" + jsonResult.Name + "</td><td>" + jsonResult.Symbol + "</td><td>" + jsonResult.High +
+            "</td><td>" + jsonResult.Low + "</td><td>" + jsonResult.LastPrice + "</td></tr>")
+
        });
 
        //=====================Second AJAX Request==================================//
