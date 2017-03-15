@@ -1,32 +1,68 @@
 html {
+    background-image: url("../images/halftone.png");
+}
+
+body {
+    color: white;
+}
+
+#stockSection {
+    max-width: 1080px;
+    margin: auto;
 }
 
 #searchButton {
-	transition-duration: 0.4s;
+    transition-duration: 0.4s;
 }
+
+#darkGray {
+    background-color: #606060;
+}
+
+#mediumGray {
+    background-color: #555555;
+}
+
 #lightGray {
-	background-color: #949389;
+    background-color: #888888;
 }
+
+#lightestGray {
+    background-color: #a8a8a8;
+}
+
 #searchResults {
-	background-color: #ECE7DA;
-	border: 2px;
-	border-style: solid;
-	border-color: #949389;
+    background-color: #ECE7DA;
+    border: 2px;
+    border-style: solid;
+    border-color: #949389;
 }
+
 /*#logo {
     height: 100%;
     width: 100%;
 }*/
 
+.border {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+.shadow {
+    -moz-box-shadow: 0 0 30px 5px #999;
+    -webkit-box-shadow: 0 0 30px 5px #999;
+}
+
 #timber {
-    background-color: #00AD81 ;
+    background-color: #00AD81;
 }
 
 .resultSym {
     font-size: 50px;
 }
-/*hex colors:
 
+/*hex colors:
 ears: #939387
 outline: #251e0e
 fur: #5b5849
