@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <section class="hero is-small is-primary is-bold hero-body">
+    <section class="shadow hero is-small is-primary is-bold hero-body">
         <div>
             <div class="container">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-2">
                         <img src="assets/images/cartoon.png">
                     </div>
-                    <div class="column">
+                    <div class="hero-body column is-4">
                         <h1 class="title">
        Financial Application
          </h1>
@@ -26,9 +26,9 @@
        for tracking stocks, prices and news in finance
      </h2>
                     </div>
-                    <!-- <div class="column">
-                    </div> -->
-                    <div class="column">
+                    <div class="column is-2">
+                    </div>
+                    <div class="column is-4">
                         <div class="hero-body">
                             <form id="stock-form" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
                                 <div id="mc_embed_signup_scroll">
@@ -52,103 +52,83 @@
                     </div>
     </section>
     <br>
-    <!-- <center>
-        <div class="columns">
-            <div class="column">
-                News
-            </div>
-            <div class="column">
-                Stocks
-            </div>
-            <div class="column">
-                My Investments
-            </div>
-        </div> -->
-    <div class="tile is-ancestor">
-        <div class="tile is-vertical is-8">
-            <div class="tile">
-                <div class="tile is-parent is-vertical">
-                    <article class="tile is-child notification is-primary" id="lightGray">
-                        <p class="title">Stocks</p>
-                        <p class="subtitle"></p>
-                        <div class="container">
-                            <div class="columns">
-                                <div class="column">
-                                    <h1> APPL </h1>
-                                    <p> High: Low: Current: </p>
+    <section id="stockSection">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                        <article class="border tile is-child notification is-primary" id="darkGray">
+                            <p class="title">Stocks</p>
+                            <p class="subtitle"></p>
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column" id="stockInfo">
+                                    </div>
+                                    <div class="column" id="stockInfo2">
+                                    </div>
+                                    <div class="column" id="stockInfo3">
+                                    </div>
+                                    <div class="column" id="stockInfo4">
+                                    </div>
+                                    <div class="column" id="stockInfo5">
+                                    </div>
                                 </div>
-                                <div class="column">
-                                    <h1> APPL </h1>
-                                    <p> High: Low: Current: </p>
-                                </div>
-                                <div class="column">
-                                    <h1> APPL </h1>
-                                    <p> High: Low: Current: </p>
-                                </div>
-                                <div class="column">
-                                    <h1> APPL </h1>
-                                    <p> High: Low: Current: </p>
-                                </div>
-                                <div class="column">
-                                    <h1> APPL </h1>
-                                    <p> High: Low: Current: </p>
-                                </div>
+                        </article>
+                        <article class="border tile is-child notification is-primary is-bold" id="stock-view" id="searchResults">
+                            <p class="title" id="legal_name"></p>
+                            <p id="highPrice"></p>
+                            <p id="lowPrice"></p>
+                            <p id="lastPrice"></p>
+                        </article>
+                        </div>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="border tile is-child notification" id="lightGray">
+                            <p class="title">Company Information</p>
+                            <p class="subtitle"></p>
+                            <br>
+                            <p id="business_address"></p>
+                            <br>
+                            <p id="company_url"></p>
+                            <br>
+                            <p id="long_description"></p>
+                            <div class="content">
+                                <!-- Content -->
                             </div>
-                    </article>
-                    <article class="tile is-child notification is-warning" id="stock-view" id="searchResults">
-                        <p class="title" id="legal_name"></p>
-                        <p id="highPrice"></p>
-                        <p id="lowPrice"></p>
-                        <p id="lastPrice"></p>
-                    </article>
+                        </article>
                     </div>
                 </div>
                 <div class="tile is-parent">
-                    <article class="tile is-child notification is-danger">
-                        <p class="title">Company Information</p>
-                        <p class="subtitle"></p>
-                        <br>
-                        <p id="business_address"></p>
-                        <br>
-                        <p id="company_url"></p>
-                        <br>
-                        <p id="long_description"></p>
+                    <article class="border tile is-child notification" id="lightestGray">
                         <div class="content">
-                            <!-- Content -->
+                            <p class="title">My Stocks</p>
+                            <p class="subtitle">keep track of your investments</p>
+                            <div class="content">
+                                <!-- Content -->
+                                <table id="tableList" class="table is-bordered is-striped is-narrow">
+                                    <thead>
+                                        <tr>
+                                            <th><strong>Company</strong></th>
+                                            <th><strong>Symbol</strong></th>
+                                            <th><strong>High</strong></th>
+                                            <th><strong>Low</strong></th>
+                                            <th><strong>Current</strong></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                    </tfoot>
+                                    <tbody>
+                                    </tbody>
+                                    <!-- Content -->
+                                </table>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div>
-            <div class="tile is-parent">
-                <article class="tile is-child notification is-primary" id="timber">
-                    <div class="content">
-                        <p class="title">My Stocks</p>
-                        <p class="subtitle">keep track of your investments</p>
-                        <div class="content">
-                            <!-- Content -->
-                            <table id="tableList" class="table is-bordered is-striped is-narrow">
-                                <thead>
-                                    <tr>
-                                        <th><strong>Company</strong></th>
-                                        <th><strong>Symbol</strong></th>
-                                        <th><strong>High</strong></th>
-                                        <th><strong>Low</strong></th>
-                                        <th><strong>Current</strong></th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                </tfoot>
-                                <tbody>
-                                    
-                                </tbody>
-                                <!-- Content -->
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-        <script src="assets/javascript/project1.js">
-        </script>
+    </section>
+    <script src="assets/javascript/project1.js">
+    </script>
 </body>
 
 </html>
