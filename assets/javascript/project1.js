@@ -87,6 +87,7 @@
       }).done(function(response) {
           console.log(response)
           $("#legal_name").text(response.legal_name)
+          $("#symbol_name").text(response.ticker)
           $("#business_address").text(response.business_address)
           $("#company_url").text(response.company_url)
           $("#long_description").text(response.long_description)
