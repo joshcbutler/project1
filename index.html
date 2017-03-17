@@ -4,8 +4,8 @@
 <head>
     <title>Ticker Tracker</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
@@ -70,11 +70,10 @@
                                     </div>
                                     <div class="column" id="stockInfo4">
                                     </div>
-                                    <div class="column" id="stockInfo5">
-                                    </div>
                                 </div>
                         </article>
-                        <article class="border tile is-child notification is-primary is-bold" id="stock-view" id="searchResults">
+                        <article id="teal" class="border tile is-child notification is-primary is-bold" id="stock-view" id="searchResults">
+                            <button id="addButton"><span class="glyphicon glyphicon-plus-sign"></span></button>
                             <p class="title" id="legal_name"></p>
                             <p class="subtitle" id="symbol_name"></p>
                             <p id="highPrice"></p>
@@ -84,7 +83,7 @@
                         </div>
                     </div>
                     <div class="tile is-parent">
-                        <article class="border tile is-child notification" id="lightGray">
+                        <article class="border tile is-child notification" id="companyInfoDiv">
                             <p class="title">Company Information</p>
                             <p class="subtitle"></p>
                             <br>
@@ -100,7 +99,7 @@
                     </div>
                 </div>
                 <div class="tile is-parent">
-                    <article class="border tile is-child notification" id="lightestGray">
+                    <article class="border tile is-child notification" id="myStocksDiv">
                         <div class="content">
                             <p class="title">My Stocks</p>
                             <p class="subtitle">keep track of your investments</p>
@@ -130,6 +129,7 @@
     </section>
     <script src="assets/javascript/project1.js">
     </script>
+    <img id="bigwolf" src="assets/images/cartoon.png">
 </body>
 
 </html>
