@@ -60,10 +60,11 @@
           //If all goes well, your quote will be here.
           console.log(jsonResult);
           //Now proceed to do something with the data.
-          $("#name").text(jsonResult.Name);
-          $("#highPrice").text("High Price:" + "  " + jsonResult.High);
-          $("#lowPrice").text("Low Price:" + "  " + jsonResult.Low);
-          $("#lastPrice").text("Current Price:" + "  " + jsonResult.LastPrice);
+          $("#legal-name").text(jsonResult.Name);
+          $("#symbol-name").text(jsonResult.Symbol);
+          $("#high-price").text("High Price:" + "  " + jsonResult.High);
+          $("#low-price").text("Low Price:" + "  " + jsonResult.Low);
+          $("#last-price").text("Current Price:" + "  " + jsonResult.LastPrice);
           stock = jsonResult;
       });
 
@@ -84,10 +85,10 @@
           }
       }).done(function(response) {
           console.log(response)
-          $("#legal_name").text(response.legal_name)
-          $("#business_address").text(response.business_address)
-          $("#company_url").text(response.company_url)
-          $("#long_description").text(response.long_description)
+          $("#legal_name").text(response.legal_name);
+          $("#business_address").text(response.business_address);
+          $("#company_url").attr("href", response.company_url).text(response.company_url);
+          $("#long_description").text(response.long_description);
       });
   });
 

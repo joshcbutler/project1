@@ -84,6 +84,9 @@ body {
     background-color: lightgray;
 
 }
+#add-button:focus {
+    outline:0;
+}
 
 #bigwolf {
     max-width: 40%;
