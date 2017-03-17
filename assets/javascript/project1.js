@@ -67,9 +67,6 @@
           stock = jsonResult;
       });
 
-
-
-
       //=====================Second AJAX Request==================================//
 
       console.log(this);

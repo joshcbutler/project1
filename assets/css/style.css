@@ -11,9 +11,10 @@ body {
     margin: auto;
 }
 
-#searchButton {
+.search-button {
     transition-duration: 0.4s;
 }
+
 
 #darkGray {
     background-color: rgba(96, 96, 96, 0.8)/*#606060*/
@@ -36,7 +37,7 @@ body {
     color: black;
 }
 
-#searchResults {
+#search-results {
     background-color: #ECE7DA;
     border: 2px;
     border-style: solid;
@@ -67,6 +68,7 @@ body {
 }
 
 #add-button {
+    float:right;
     height: 35px;
     width: 35px;
     display: block;
@@ -74,9 +76,17 @@ body {
     border-radius: 50%;
     color: white;
     border: 2px solid #3f3f3f;
+    transition-duration: 0.2s;
+    cursor:pointer;
+}
+
+#add-button:hover {
+    background-color: lightgray;
+
 }
 
 #bigwolf {
+    max-width: 40%;
     opacity: 50%;
     position: fixed;
     bottom: 0;
