@@ -86,8 +86,10 @@
       }).done(function(response) {
           console.log(response)
           $("#legal_name").text(response.legal_name);
-          $("#business_address").text(response.business_address);
+          $("#ceo").text("CEO: " + response.ceo);
+          $("#business_address").text("Address: " + response.business_address);
           $("#company_url").attr("href", response.company_url).text(response.company_url);
+          $("#employees").text("Employees: " + response.employees);
           $("#long_description").text(response.long_description);
       });
   });

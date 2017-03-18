@@ -5,6 +5,7 @@
     <title>Ticker Tracker</title>
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
         <div>
             <div class="container">
                 <div class="columns">
-                    <div class="column is-2">
+                    <div class="animated flipInX column is-2">
                         <img src="assets/images/cartoon.png">
                     </div>
                     <div class="hero-body column is-4">
@@ -85,13 +86,12 @@
                     <div class="tile is-parent">
                         <article class="border tile is-child notification" id="companyInfoDiv">
                             <p class="title">Company Information</p>
-                            <p class="subtitle"></p>
-                            <br>
+                            <p id="ceo"></p>
                             <p id="business_address"></p>
-                            <br>
                             <a href="company_url" id="company_url" target="_blank">
                             </a>
                             <br>
+                            <p id="employees"></p>
                             <p id="long_description"></p>
                             <div class="content">
                                 <!-- Content -->
