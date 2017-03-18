@@ -114,9 +114,15 @@ $("#add-button").on("click", function(e) {
 });
 database.ref().on("child_added", function(snapshot) {
     console.log(snapshot);
-    $("#tableList > tbody").append("<tr><td>" + snapshot.val().Name + "</td><td>" + snapshot.val().Symbol + "</td><td>" + snapshot.val().High +
+    $("#tableList > tbody").append("<tr><td>" + "<input id='delete-button' type='button' class='deleteButton' value='X' onclick='deleteRow(this)'/>" + "</td><td>" + snapshot.val().Name + "</td><td>" + snapshot.val().Symbol + "</td><td>" + snapshot.val().High +
         "</td><td>" + snapshot.val().Low + "</td><td>" + snapshot.val().LastPrice + "</td></tr>")
 })
+
+function deleteRow(t) {
+    var row = t.parentNode.parentNode;
+    document.getElementById("tableList").deleteRow(row.rowIndex);
+    console.log(row);
+}
 $(document).ready(function() {
 
     var Markit = {}
