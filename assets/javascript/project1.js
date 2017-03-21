@@ -112,17 +112,34 @@ $("#add-button").on("click", function(e) {
     //     "</td><td>" + stock.Low + "</td><td>" + stock.LastPrice + "</td></tr>")
 
 });
-database.ref().on("child_added", function(snapshot) {
-    console.log(snapshot);
-    $("#tableList > tbody").append("<tr><td>" + "<input id='delete-button' type='button' class='deleteButton' value='X' onclick='deleteRow(this)'/>" + "</td><td>" + snapshot.val().Name + "</td><td>" + snapshot.val().Symbol + "</td><td>" + snapshot.val().High +
-        "</td><td>" + snapshot.val().Low + "</td><td>" + snapshot.val().LastPrice + "</td></tr>")
+
+database.ref().on("child_added", function (snapshot) {
+
+  console.log(snapshot);
+
+   $("#tableList > tbody").append("<tr><td>" + "<input id=" + snapshot.val().Symbol + " type='button' value='Delete' class='deleteButton' onclick='deleteRow(this)'/>" + "</td><td>" + snapshot.val().Name + "</td><td>" + snapshot.val().Symbol + "</td><td>" + snapshot.val().High +
+          "</td><td>" + snapshot.val().Low + "</td><td>" + snapshot.val().LastPrice + "</td></tr>")
+
 })
 
-function deleteRow(t) {
+   function deleteRow(t)
+{
     var row = t.parentNode.parentNode;
     document.getElementById("tableList").deleteRow(row.rowIndex);
-    console.log(row);
+    console.log(t);
+    var x = $(t).attr('id');
+    console.log(x);
+
+    database.ref().orderByChild("Symbol").equalTo(x).once('value', function(snapshot) {
+      snapshot.forEach(function(data) {
+        database.ref(data.key).remove();
+    });
+
+  });
+
 }
+
+
 $(document).ready(function() {
 
     var Markit = {}
