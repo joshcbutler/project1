@@ -87,7 +87,7 @@ body {
     outline: 0;
 }
 
-#delete-button {
+.delete-button {
     height: 30px;
     width: 30px;
     display: block;
@@ -99,11 +99,11 @@ body {
     cursor: pointer;
 }
 
-#delete-button:hover {
+.delete-button:hover {
     background-color: lightgray;
 }
 
-#delete-button:focus {
+.delete-button:focus {
     outline: 0;
 }
 
