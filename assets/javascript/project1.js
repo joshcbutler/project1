@@ -117,7 +117,7 @@ database.ref().on("child_added", function (snapshot) {
 
   console.log(snapshot);
 
-   $("#tableList > tbody").append("<tr><td>" + "<input id=" + snapshot.val().Symbol + " type='button' value='Delete' class='deleteButton' onclick='deleteRow(this)'/>" + "</td><td>" + snapshot.val().Name + "</td><td>" + snapshot.val().Symbol + "</td><td>" + snapshot.val().High +
+   $("#tableList > tbody").append("<tr><td>" + "<input id=" + snapshot.val().Symbol + " type='button' value='Delete' class='delete-button' onclick='deleteRow(this)'/>" + "</td><td>" + snapshot.val().Name + "</td><td>" + snapshot.val().Symbol + "</td><td>" + snapshot.val().High +
           "</td><td>" + snapshot.val().Low + "</td><td>" + snapshot.val().LastPrice + "</td></tr>")
 
 })
