@@ -79,6 +79,14 @@ body {
     cursor: pointer;
 }
 
+#add-button:hover {
+    background-color: lightgray;
+}
+
+#add-button:focus {
+    outline: 0;
+}
+
 #delete-button {
     height: 30px;
     width: 30px;
@@ -96,14 +104,6 @@ body {
 }
 
 #delete-button:focus {
-    outline: 0;
-}
-
-#add-button:hover {
-    background-color: lightgray;
-}
-
-#add-button:focus {
     outline: 0;
 }
 
