@@ -24,7 +24,7 @@ $("#find-stock").on("click", function(event) {
     Markit.QuoteService = function(sSymbol, fCallback) {
         name = sSymbol;
         this.fCallback = fCallback;
-        this.DATA_SRC = "http://dev.markitondemand.com/Api/v2/Quote/jsonp";
+        this.DATA_SRC = "https://dev.markitondemand.com/Api/v2/Quote/jsonp";
         this.makeRequest();
     };
     /**
@@ -151,7 +151,7 @@ $(document).ready(function() {
         this.GCallback = GCallback;
         this.HCallback = HCallback;
         this.MCallback = MCallback;
-        this.DATA_SRC = "http://dev.markitondemand.com/Api/v2/Quote/jsonp";
+        this.DATA_SRC = "https://dev.markitondemand.com/Api/v2/Quote/jsonp";
         this.makeRequest();
     };
 
